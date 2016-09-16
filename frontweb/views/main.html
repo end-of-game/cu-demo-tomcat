@@ -1,0 +1,68 @@
+ <md-content layout="column" flex >
+
+      <md-card>
+        <md-toolbar class="md-table-toolbar md-default">
+          <div class="md-toolbar-tools">
+            <span>Compagnies</span>
+          </div>
+        </md-toolbar>
+        
+       <table>
+        <thead>
+          <tr>
+              <th data-field="id">Names</th>
+              <th data-field="name">Price</th>
+              <th data-field="price">Change</th>
+                <th data-field="name">Shares</th>
+              <th data-field="price">Value</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="compagny in compagnies | orderBy: 'name' track by $index" >
+            <td>{{compagny.name}}</td>
+            <td>{{compagny.price | setDecimal:2}}</td>
+            <td>{{compagny.changes | setDecimal:2}} 
+              <ng-md-icon ng-if="compagny.share > 0" icon="trending_up" style="fill:green" size="24"></ng-md-icon>
+              <ng-md-icon ng-if="compagny.share < 0" icon="trending_down" style="fill:red" size="24"></ng-md-icon>
+            </td>
+            <td>{{compagny.share }}</td>
+            <td>{{compagny.value | setDecimal:2}} </td>
+          </tr>
+        </tbody>
+      </table>
+      
+     <!--
+       <p>
+        Total share: {{ sumShares }}
+        Total value: {{ sumValue }}€	 
+      </p>
+     -->
+     </md-card>
+      
+    <div layout-sm="column" layout="row" layout-wrap>
+        <div flex-sm="100" flex="40">
+            <md-toolbar layout="row" layout-align="center center" class="md-table-toolbar md-default">
+                Your value
+            </md-toolbar>
+            <canvas id="line" class="chart chart-line" chart-data="data"
+                chart-labels="labels" >
+            </canvas>
+            <!--
+            <canvas id="bar" class="chart chart-bar"
+            chart-data="data" chart-labels="labels" 
+            >
+            </canvas>-->
+        </div>
+        <div flex="40" flex-sm="100"  flex-offset-sm="0" flex-offset="20">
+            <md-toolbar layout="row" layout-align="center center" class="md-table-toolbar md-default">
+                Your shares
+            </md-toolbar>
+                <canvas id="doughnut" class="chart chart-doughnut"
+                chart-data="sharesTab" chart-labels="compagniesTab">
+                </canvas> 
+        </div>
+    </div>
+       
+</md-content>
+    
