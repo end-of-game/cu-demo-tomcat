@@ -1,4 +1,4 @@
-connect --login johndoe --password abc2015 --host http://cuplatform_tomcat_1.tomcat.cloud.unit:8080
+connect --login johndoe --password abc2015 --host http://192.168.50.4:8080
 
 use backend#APPNAME
 deploy --path backend/target/backend-0.1.war --openBrowser false
