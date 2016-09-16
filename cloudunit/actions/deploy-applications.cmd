@@ -5,7 +5,7 @@ deploy --path backend/target/backend-0.1.war --openBrowser false
 
 use front#APPNAME
 open-explorer --containerName g2c-johndoe-front#APPNAME-apache-2-2
-enter-directory var/www
+enter-directory /usr/local/apache2/htdocs
 upload-file --path frontweb.tar.gz
 unzip --file frontweb.tar.gz
 list-files
