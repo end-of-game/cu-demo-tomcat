@@ -6,8 +6,8 @@ deploy --path backend/target/backend-0.1.war --openBrowser false
 use front#APPNAME
 open-explorer --containerName dev-johndoe-front#APPNAME-apache-2-2
 change-directory /usr/local/apache2/htdocs
-upload-file --path /usr/local/apache2/htdocs/frontweb.tar.gz
-unzip --file frontweb.tar.gz
+upload-file --path frontweb.tar.gz
+unzip --file /usr/local/apache2/htdocs/frontweb.tar.gz
 list-files
 close-explorer
 
