@@ -15,7 +15,7 @@ node {
 
 stage "Create FrontWeb"
 node {
-    cloudunit.setValue('frontweb/js/app.js', 'CHEMIN_BACKEND', 'backend${BRANCH_NAME}${BUILD_ID}-johndoe-admin.g2c.cloudunit.io')
+    cloudunit.setValue('frontweb/js/app.js', 'CHEMIN_BACKEND', 'backend${BRANCH_NAME}${BUILD_ID}-johndoe-admin.g2c.cloudunit.dev')
     cloudunit.compress('frontweb', 'frontweb')
     cloudunit.callAction 'cloudunit/actions/frontweb.cmd'
 }
