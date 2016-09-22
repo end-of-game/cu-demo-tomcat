@@ -1,14 +1,14 @@
 package fr.treeptik.rest.service;
 
-import java.util.List;
-
 import fr.treeptik.rest.model.PersistentStock;
+
+import java.util.List;
 
 public interface StockMessageService {
 
-	PersistentStock save(PersistentStock persistentStock);
+    PersistentStock save(PersistentStock persistentStock);
 
-	List<PersistentStock> list();
+    List<PersistentStock> list();
 
-	void sendMessage();
+    void sendMessage();
 }

@@ -9,9 +9,8 @@ import java.util.Random;
  */
 public class RandomStock {
 
-    private static Random randomGenerator = new Random();
-
     public final static List<Stock> stockList = new ArrayList<>();
+    private static Random randomGenerator = new Random();
 
     static {
         stockList.add(new Stock("IBM"));
