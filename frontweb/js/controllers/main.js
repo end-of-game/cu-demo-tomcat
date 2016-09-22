@@ -55,7 +55,6 @@ angular.module('cloudunitDemoApp').controller('mainCtrl', function($scope, $stom
 			$scope.sharesTab = [];
 			
 			$scope.compagnies = JSON.parse(res.body);
-			
 
 			updateGraph();
 			$scope.$apply();
