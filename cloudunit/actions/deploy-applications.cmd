@@ -8,6 +8,7 @@ open-explorer --containerName dev-johndoe-front#APPNAME-apache-2-2
 change-directory /usr/local/apache2/htdocs
 upload-file --path frontweb.tar.gz
 unzip --file /usr/local/apache2/htdocs/frontweb.tar.gz
+open-port --nature web --port 80
 list-files
 close-explorer
 
