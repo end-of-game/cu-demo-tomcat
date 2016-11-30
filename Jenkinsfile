@@ -1,6 +1,6 @@
-def host = http://192.168.50.1:8080/
-def username = johndoe
-def password = abc2015
+def host = "http://192.168.50.1:8080/"
+def username = "johndoe"
+def password = "abc2015"
 
 stage "Init SCM"
 node {
