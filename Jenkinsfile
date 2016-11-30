@@ -8,7 +8,7 @@ node {
     checkout scm
 
     committer = gitLog.committer().replaceAll(/\s/,"").toLowerCase().take(10)
-    branch = env.BRANCH_NAME.replaceAll(/.*\//,"").toLowerCase().take(10)
+    branch = env.BRANCH_NAME.replaceAll(/.*\//,"").toLowerCase().take(8)
     appname = "${branch}-${committer}"
 }
 
