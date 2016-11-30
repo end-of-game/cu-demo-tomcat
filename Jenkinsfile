@@ -1,15 +1,15 @@
 def host = "http://192.168.50.1:8080/"
 def username = "johndoe"
 def password = "abc2015"
-def committer
 def appname
 
 stage "Init SCM"
 node {
     checkout scm
 
-    committer = gitLog.committer()
-    appname = env.BRANCH_NAME.replaceAll(/.*\//,"").take(10) + committer.take(10)
+    committer = gitLog.committer().replaceAll(/\s/,"").toLowerCase().take(10)
+    branch = env.BRANCH_NAME.replaceAll(/.*\//,"").toLowerCase().take(10)
+    appname = "${branch}-${committer}"
 }
 
 stage "Build"
