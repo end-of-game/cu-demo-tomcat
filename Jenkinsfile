@@ -14,7 +14,7 @@ node {
 
 stage "Create Front"
 node {
-    sh "sed -i s/CHEMIN_BACKEND/backend${BRANCH_NAME}-johndoe-admin.cloudunit.dev/g frontweb/js/app.js"
+    sh "sed -i 's/CHEMIN_BACKEND/backend${BRANCH_NAME}-johndoe-admin.cloudunit.dev/g' frontweb/js/app.js"
     sh "tar -C frontweb -zcf frontweb.tar.gz"
     
     cloudunit(host, username, password, """
