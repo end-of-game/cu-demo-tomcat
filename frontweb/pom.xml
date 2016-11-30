@@ -24,7 +24,7 @@
 				</execution>
 			</executions>
 			<configuration>
-				<executable>/var/jenkins_home/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/NODE630/bin/bower</executable>
+				<executable>bower</executable>
 				<arguments>
 					<argument>install</argument>
 				</arguments>
