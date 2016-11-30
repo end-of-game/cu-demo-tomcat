@@ -26,7 +26,7 @@ node {
         open-explorer --containerName dev-johndoe-front${appname}-apache-2-2
         change-directory /usr/local/apache2/htdocs
         upload-file --path frontweb.tar.gz
-        unzip --file /usr/local/apache2/htdocs/front.tar.gz
+        unzip --file /usr/local/apache2/htdocs/frontweb.tar.gz
         list-files
         close-explorer
     """)
