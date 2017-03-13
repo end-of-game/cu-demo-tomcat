@@ -18,7 +18,7 @@ public class StockMessageServiceImpl implements StockMessageService {
 
     public String[] companiesNames = {"IBM", "Oracle", "Docker", "Treeptik", "Xebia",
             "MacDo", "CocaCola", "Apple", "Intel", "VmWare",
-            "Hooli", "PipePiper", "AnaoTech", "Rothschild", "SG",};
+            "Hooli", "PiedPiper", "AnaoTech", "Rothschild", "SG",};
     private Logger logger = LoggerFactory.getLogger(StockMessageService.class);
     @Autowired
     private StockDAO stockDAO;
