@@ -10,20 +10,6 @@
 	<packaging>war</packaging>
 
 	<dependencies>
-		<!-- standard.jar -->
-		<dependency>
-			<groupId>taglibs</groupId>
-			<artifactId>standard</artifactId>
-			<version>1.1.2</version>
-		</dependency>
-
-		<!-- JSTL -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.1.2</version>
-		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-websocket</artifactId>
@@ -80,7 +66,6 @@
             <version>2.2</version>
             <configuration>
                 <path>/</path>
-                <contextFile>${project.basedir}\src\tomcat7-maven-plugin\resources\context.xml</contextFile>
             </configuration>
         </plugin>
 			<plugin>
