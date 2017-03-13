@@ -15,13 +15,16 @@ node {
 
 stage "Build"
 node {
-    sh 'mvn clean package -DskipTests'
+    sh 'mvn clean package'
+    sh "sed -i 's/CHEMIN_BACKEND/${back}-${username}.cu02.cloudunit.io/g' frontweb/js/app.js"
+    sh "tar -C frontweb -zcf frontweb.tar.gz ."
+
+    archiveArtifacts "backend/target/ROOT.war,frontweb.tar.gz"
+    junit "backend/target/surefire-reports/*.xml"
 }
 
 stage "Create Front"
 node {
-    sh "sed -i 's/CHEMIN_BACKEND/${back}-${username}.cu02.cloudunit.io/g' frontweb/js/app.js"
-    sh "tar -C frontweb -zcf frontweb.tar.gz ."
     
     cloudunit(host, username, password, """
         rm-app --scriptUsage --name ${front}
