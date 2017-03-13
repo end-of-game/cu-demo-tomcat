@@ -1,4 +1,4 @@
-def host = "https://cu02.cloudunit.io/"
+def host = "https://cu02.cloudunit.io"
 def username = "johndoe"
 def password = "abc2015"
 def back
