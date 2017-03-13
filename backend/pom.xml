@@ -8,6 +8,10 @@
 	</parent>
 	<artifactId>backend</artifactId>
 	<packaging>war</packaging>
+  
+    <properties>
+        <spring.profiles.active>embedded</spring.profiles.active>
+    </properties>
 
 	<dependencies>
 		<dependency>
@@ -37,7 +41,6 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
@@ -66,6 +69,9 @@
             <version>2.2</version>
             <configuration>
                 <path>/</path>
+                <systemProperties>
+                    <spring.profiles.active>${spring.profiles.active}</spring.profiles.active>
+                </systemProperties>
             </configuration>
         </plugin>
 			<plugin>
@@ -79,6 +85,5 @@
 				</configuration>
 			</plugin>
         </plugins>
-
     </build>
 </project>
