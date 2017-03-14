@@ -15,7 +15,7 @@ node {
 
 stage "Build"
 node {
-    sh 'mvn clean package'
+    sh 'mvn clean package -Dsonar.host.url=http://sonarqube:9000'
     sh "sed -i 's/CHEMIN_BACKEND/${back}-${username}.cu02.cloudunit.io/g' frontweb/js/app.js"
     sh "tar -C frontweb -zcf frontweb.tar.gz ."
 
