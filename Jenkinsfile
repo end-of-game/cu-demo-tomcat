@@ -20,7 +20,7 @@ node {
     sh "tar -C frontweb -zcf frontweb.tar.gz ."
 
     archiveArtifacts "backend/target/ROOT.war,frontweb.tar.gz"
-    junit "backend/target/surefire-reports/*.xml
+    junit "backend/target/surefire-reports/*.xml"
 }
 
 stage "Create Front"
